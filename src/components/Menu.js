@@ -59,45 +59,56 @@ const WeeklyMealDashboard = () => {
                 {/* Menu Cards */}
                 <div className="grid md:grid-cols-2 gap-6">
                     {/* Left Column */}
-                    <div className="flex flex-col items-center space-y-5 w-full">
+                    <div className="flex flex-col items-center space-y-6 w-full">
                         {/* Breakfast */}
-                        <div className="bg-amber-50 rounded-2xl p-2 shadow-lg border border-rose-200 overflow-hidden w-full sm:w-4/5 md:w-2/3">
-                            <h3 className="text-2xl sm:text-5xl font-bold text-red-700 mb-4 flex items-center justify-center">
-                                <span className="mr-2">🥣</span> Morning Breakfast <span className="ml-2 mb-2">🥣</span>
+                        <div className="bg-amber-50 rounded-2xl p-3 shadow-xl border border-rose-200 overflow-hidden w-full sm:w-4/5 md:w-2/3 transition-transform duration-300 hover:scale-[1.01]">
+                            <h3 className="text-2xl sm:text-5xl font-extrabold text-red-700 mb-3 flex items-center justify-center tracking-tight">
+                                <span className="mr-3 text-3xl">🥣</span>
+                                Morning Breakfast
+                                <span className="ml-3 text-3xl mb-1">🥣</span>
                             </h3>
-                            <div>
+                            <div className="space-y-3">
                                 {todayMenu.breakfastItems.map((item, i) => (
-                                    <div key={i} className="flex items-center space-x-2 p-2 rounded-lg hover:bg-amber-100 transition-colors">
+                                    <div
+                                        key={i}
+                                        className="flex items-center space-x-4 p-1 rounded-xl hover:bg-amber-100 transition-colors duration-200"
+                                    >
                                         <img
                                             src={item.img}
                                             alt={item.name}
-                                            className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg border-2 border-amber-200 shadow-sm object-cover"
+                                            className="w-20 h-20 sm:w-20 sm:h-20 rounded-xl border-2 border-amber-200 shadow-md object-cover"
                                         />
-                                        <span className="text-2xl sm:text-4xl text-amber-900 font-bold">{item.name}</span>
+                                        <span className="text-xl sm:text-3xl text-amber-900 font-semibold">{item.name}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
                         {/* Snacks */}
-                        <div className="bg-amber-50 rounded-2xl p-2 shadow-lg border border-amber-200 overflow-hidden w-full sm:w-4/5 md:w-2/3">
-                            <h3 className="text-2xl sm:text-5xl font-bold text-red-700 mb-4 flex items-center justify-center">
-                                <span className="mr-2">🍟</span> Evening Snacks <span className="ml-2 mb-2">🍟</span>
+                        <div className="bg-amber-50 rounded-2xl p-3 shadow-xl border border-amber-200 overflow-hidden w-full sm:w-4/5 md:w-2/3 transition-transform duration-300 hover:scale-[1.01]">
+                            <h3 className="text-2xl sm:text-5xl font-extrabold text-red-700 mb-3 flex items-center justify-center tracking-tight">
+                                <span className="mr-3 text-3xl">🍟</span>
+                                Evening Snacks
+                                <span className="ml-3 text-3xl mb-1">🍟</span>
                             </h3>
-                            <div>
+                            <div className="space-y-3">
                                 {todayMenu.snacksItems.map((item, i) => (
-                                    <div key={i} className="flex items-center space-x-2 p-2 rounded-lg hover:bg-amber-100 transition-colors">
+                                    <div
+                                        key={i}
+                                        className="flex items-center space-x-4 p-1 rounded-xl hover:bg-amber-100 transition-colors duration-200"
+                                    >
                                         <img
                                             src={item.img}
                                             alt={item.name}
-                                            className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg border-2 border-amber-200 shadow-sm object-cover"
+                                            className="w-20 h-20 sm:w-20 sm:h-20 rounded-xl border-2 border-amber-200 shadow-md object-cover"
                                         />
-                                        <span className="text-2xl sm:text-4xl text-amber-900 font-bold">{item.name}</span>
+                                        <span className="text-xl sm:text-3xl text-amber-900 font-semibold">{item.name}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
+
 
                     {/* Right Column */}
                     <div className="grid grid-cols-2 gap-6 w-full">
@@ -128,19 +139,26 @@ const WeeklyMealDashboard = () => {
 
                     {/* Special Items */}
                     {todayMenu.specialItems && (
-                        <div className="col-span-full bg-gradient-to-r from-amber-50 to-rose-50 p-5 border-l-4 border-rose-500 rounded-xl shadow-md">
-                            <h4 className="text-rose-800 font-bold text-lg sm:text-xl mb-2 flex items-center">
-                                <span className="mr-2">⭐</span> Special Items : <span className="ml-2 text-blue-900">Minimum 10 Pre-order required</span>
+                        <div className="col-span-full bg-gradient-to-r from-amber-50 to-rose-50 p-4 border-l-4 border-rose-500 rounded-2xl shadow-lg">
+                            <h4 className="text-rose-800 font-extrabold text-xl sm:text-2xl mb-4 flex items-center">
+                                <span className="mr-3 text-2xl">⭐</span>
+                                Special Items
+                                <span className="ml-3 text-base text-blue-900 font-medium italic">(Minimum 10 Pre-order required)</span>
                             </h4>
-                            <div className="space-y-2">
+                            <div className="space-y-3">
                                 {Object.entries(todayMenu.specialItems).map(([mealType, items], index) => (
-                                    <div key={index} className="ml-2 text-gray-700 bg-rose-100 p-2 rounded-lg">
-                                        <strong className="capitalize text-rose-800">{mealType}:</strong> {items.join(", ")}
+                                    <div
+                                        key={index}
+                                        className="ml-4 px-4 py-2 bg-rose-100 text-gray-800 rounded-lg border border-rose-200"
+                                    >
+                                        <span className="block font-bold text-rose-700 capitalize mb-1">{mealType} : <span className="text-gray-700">{items.join(", ")}</span></span>
+
                                     </div>
                                 ))}
                             </div>
                         </div>
                     )}
+
                 </div>
             </div>
         </div>

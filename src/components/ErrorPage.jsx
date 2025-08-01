@@ -11,11 +11,6 @@ const ErrorPage = () => {
     return (
         <div className="text-center">
             <div className="flex items-center flex-col justify-center min-h-screen ">
-                <img
-                    src="https://i.pinimg.com/1200x/13/75/7f/13757ff4b62025394ea27aaf46fe12ae.jpg"
-                    className="w-[300px] "
-                    alt="Error Illustration"
-                />
                 <h1 className="text-4xl font-bold text-red-700 mb-4">Oops! 😓</h1>
                 <p className="text-lg text-red-500">Something went wrong.</p>
                 {error && (

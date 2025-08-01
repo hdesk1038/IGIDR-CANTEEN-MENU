@@ -1,6 +1,7 @@
 import React from "react";
 import weeklyMenu from "../../utils/WeeklyMenu";
 import { useParams } from "react-router";
+import ErrorPage from "./ErrorPage";
 
 const WeeklyMealDashboard = () => {
     
@@ -11,7 +12,7 @@ const WeeklyMealDashboard = () => {
     if (!todayMenu) {
         return (
             <div className="text-center py-10 text-red-600 font-bold text-xl">
-                No Menu Found for {dayName}
+                <ErrorPage/>
             </div>
         );
     }

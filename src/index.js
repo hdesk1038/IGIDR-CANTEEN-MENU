@@ -11,7 +11,7 @@ const appRouter = createBrowserRouter([
             errorElement: <ErrorPage />,
         },
         {
-            path: "/divas/:day",
+            path: "/day/:days",
             element: <App />,
             errorElement: <ErrorPage />,
         }

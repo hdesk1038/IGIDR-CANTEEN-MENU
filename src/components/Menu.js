@@ -4,15 +4,17 @@ import { useParams } from "react-router";
 import ErrorPage from "./ErrorPage";
 
 const WeeklyMealDashboard = () => {
-    
-    const { day } = useParams(); 
-    const dayName = day || new Date().toLocaleDateString("en-US", { weekday: "long" });
+
+    const { days } = useParams();
+
+    const dayName = days ? days.charAt(0).toUpperCase() + days.slice(1) : new Date().toLocaleDateString("en-US", { weekday: "long" });
+
     const todayMenu = weeklyMenu[dayName];
 
     if (!todayMenu) {
         return (
             <div className="text-center py-10 text-red-600 font-bold text-xl">
-                <ErrorPage/>
+                <ErrorPage />
             </div>
         );
     }

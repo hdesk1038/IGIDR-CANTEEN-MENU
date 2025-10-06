@@ -297,5 +297,4 @@ const weeklyMenu = {
       },
     };
 
-export default weeklyMenu;
-
+export default weeklyMenu
